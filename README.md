@@ -1,6 +1,25 @@
-# Getting Started with Create React App
+# td-electron
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Guided electron config to render your react app as a [native desktop application](https://mmazzarolo.com/blog/2021-08-12-building-an-electron-application-using-create-react-app/?ck_subscriber_id=887768191)
+
+##  Get Started
+
+Fire up electron desktop app with
+
+```json
+yarn electron:start
+```
+
+you can build different bundles for different platform support
+```json
+"scripts": {
+  "electron:package:linux": "yarn build && electron-builder -l -c.extraMetadata.main=build/electron.js",
+  "electron:package:mac": "yarn build && electron-builder -m -c.extraMetadata.main=build/electron.js",
+  "electron:package:win": "yarn build && electron-builder -w -c.extraMetadata.main=build/electron.js"
+},
+```
 
 ## Available Scripts
 
